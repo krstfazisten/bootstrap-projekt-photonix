@@ -128,16 +128,40 @@
 
 /* md-n vagy kisebb képernyőn legyen felül kerek */
 @media (max-width: 991.98px) {
+    .about .service-card,
+    .about .service-card .row,
     .about .service-card img {
-        border-radius: 0.375rem 0.375rem 0 0;
+        border-radius: 0.375rem 0.375rem 0 0; /* rounded-top */
     }
 }
 
 /* md (768px) felett, ha külön beállítás kell */
 @media (min-width: 768px) {
+    .about .service-card img {
+        height: 100%;
+        min-height: 180px;
+    }
+    .about .img-col {
+        max-height: 1108px;
+    }
     .about .service-card {
         min-height: 280px;
-        /* stb. */
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+    }
+    .about .service-card .row {
+        height: 100%;
+        min-height: 280px;
+    }
+    .about .img-col {
+        height: 100%;
+    }
+    .about .img-col img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 }
 
@@ -145,7 +169,18 @@
 @media (min-width: 1200px) {
     .about .service-card {
         min-height: 423px;
+        height: 423px;
     }
-    /* … */
+    .about .service-card .row,
+    .about .service-card .card-body,
+    .about .service-card .img-col {
+        height: 100%;
+        min-height: 0;
+    }
+    .about .service-card img {
+        height: 100%;
+        min-height: 0;
+        object-fit: fill;
+    }
 }
 
